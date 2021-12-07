@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shopping cart</title>
+    <style>
+        body{
+            background-color: rgb(240, 240, 240);
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <script>
+      
+      var container=document.createElement('div');
+      container.style.maxWidth="1200px";
+      container.style.margin=" 100px auto";
+      container.style.backgroundColor="white";
+      container.style.display="grid";
+      container.style.gridTemplateColumns="repeat(3, 1fr)";
+      container.style.gridRowGap="30px";
+      container.style.gridAutoRows="minmax(100px, auto)";
+
+
+      var box1=document.createElement('div');
+      box1.style.border="2px solid white";
+      box1.style.borderRadius="2px";
+      box1.style.width="250px";
+      box1.style.height="330px";
+      box1.style.margin="10px";
+      box1.style.backgroundColor="rgb(239,239,239)";
+
+      var img1=document.createElement('img');
+      img1.setAttribute("src","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfNW6vlw0hNBVrhu86cGRmcYlAHIcH-brIzA&usqp=CAU");
+      img1.style.width="250px";
+      img1.style.height="190px";
+      box1.appendChild(img1);
+
+      var name1=document.createElement('div');
+      name1.innerText="Tea Tree Oil";
+      name1.style.textAlign="center";
+      name1.style.fontFamily="Arial";
+      name1.style.fontSize="20px";
+      box1.appendChild(name1);
+
+      var price1=document.createElement('div');
+      price1.innerText="₹200";
+      price1.price="200";
+      price1.style.textAlign="center";
+      price1.style.fontFamily="Arial";
+      price1.style.padding="10px";
+      price1.style.fontSize="20px";
+      box1.appendChild(price1);
+
+      var btn1=document.createElement('button');
+      btn1.innerText="Add to Cart";
+      btn1.style.fontSize="18px";
+      btn1.style.width="200px";
+      btn1.style.height="40px";
+      btn1.style.align="center";
+      btn1.style.marginTop="15px";
+      btn1.style.marginLeft="20px";
+      btn1.style.backgroundColor="rgb(70, 66, 66)";
+      btn1.style.color="white";
+      btn1.id='btn1';
+      btn1.addEventListener("click", function(){
+           
+        var cartItem1=document.createElement('p');
+        cartItem1.id='cartItem1';
+        cartItem1.innerText=name1.innerText;
+        cartItem1.style.fontSize="20px";
+        cartItem1.style.fontWeight="bold";
+        document.getElementById('btn1').disabled='true';
+        box3.appendChild(cartItem1);
+
+        total.innerText= Number(total.innerText) + Number(price1.price);
+        
+        var removeItem1=document.createElement('button');
+        removeItem1.style.float='right';
+        removeItem1.innerText='Remove';
+        removeItem1.style.width="70px";
+        removeItem1.style.height="30px";
+        removeItem1.style.marginRight="10px";
+        removeItem1.addEventListener("click", function(){
+
+        total.innerText= Number(total.innerText)- Number(price1.price);
+        document.getElementById('btn1').disabled='false';
+
+            var res=document.getElementById('cartItem1');
+
+            res.remove();
+
+         })
+         cartItem1.appendChild(removeItem1);
+      })
+      box1.appendChild(btn1);
+      container.appendChild(box1);
+
+      var box2=document.createElement('div');
+      box2.style.border="2px solid white";
+      box2.style.borderRadius="2px";
+      box2.style.width="250px";
+      box2.style.height="330px";
+      box2.style.margin="10px";
+      box2.style.backgroundColor="rgb(239,239,239)";
+
+      var img2=document.createElement('img');
+      img2.setAttribute("src","https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ0r3pYARCm99IBQi5dDGgtu1cYXn89cWqxOQ&usqp=CAU");
+      img2.style.width="250px";
+      img2.style.height="190px";
+      box2.appendChild(img2);
+
+      var name2=document.createElement('div');
+      name2.innerText="Tea Tree Shampoo";
+      name2.style.textAlign="center";
+      name2.style.fontFamily="Arial";
+      name2.style.fontSize="20px";
+      box2.appendChild(name2);
+
+      var price2=document.createElement('div');
+      price2.innerText="₹500";
+      price2.price="500";
+      price2.style.textAlign="center";
+      price2.style.fontFamily="Arial";
+      price2.style.padding="10px";
+      price2.style.fontSize="20px";
+      box2.appendChild(price2);
+
+      var btn2=document.createElement('button');
+      btn2.innerText="Add to Cart";
+      btn2.style.fontSize="18px";
+      btn2.style.width="200px";
+      btn2.style.height="40px";
+      btn2.style.align="center";
+      btn2.style.marginTop="15px";
+      btn2.style.marginLeft="20px";
+      btn2.style.backgroundColor="rgb(70, 66, 66)";
+      btn2.style.color="white";
+      btn2.id='btn2';
+      btn2.addEventListener("click", function(){
+           
+           var cartItem2=document.createElement('p');
+           cartItem2.id='cartItem2';
+           cartItem2.innerText=name2.innerText;
+           cartItem2.style.fontSize="20px";
+           cartItem2.style.fontWeight="bold";
+           document.getElementById('btn2').disabled='true';
+           box3.appendChild(cartItem2);
+   
+           total.innerText= Number(total.innerText) + Number(price2.price);
+           
+           var removeItem2=document.createElement('button');
+           removeItem2.style.float='right';
+           removeItem2.innerText='Remove';
+           removeItem2.style.width="70px";
+           removeItem2.style.height="30px";
+           removeItem2.style.marginRight="10px";
+           removeItem2.addEventListener("click", function(){
+   
+           total.innerText= Number(total.innerText)- Number(price2.price);
+           document.getElementById('btn2').disabled='false';
+   
+               var res=document.getElementById('cartItem2');
+   
+               res.remove();
+   
+            })
+            cartItem2.appendChild(removeItem2);
+         })
+      box2.appendChild(btn2);
+      container.appendChild(box2);
+
+      var box3=document.createElement('div');
+      box3.style.border="2px solid white";
+      box3.style.borderRadius="2px";
+      box3.style.gridRow="1/3";
+      box3.style.gridColumn="3";
+      box3.style.width="500px";
+      box3.style.margin="10px";
+      box3.style.backgroundColor="rgb(239,239,239)";
+      
+      var cart=document.createElement('div');
+      cart.innerText="My Cart";
+      cart.style.fontSize="30px";
+      cart.style.color="black";
+      cart.style.padding="15px";
+      cart.style.textAlign="center";
+      cart.style.backgroundColor="rgb(112, 139, 112)";
+      box3.appendChild(cart);
+      container.appendChild(box3);
+  
+      var Total=document.createElement('div');
+      Total.innerText="Total: ";
+      Total.style.fontSize="25px";
+      Total.style.fontWeight="bold";
+      Total.style.textAlign="center";
+      box3.appendChild(Total);
+
+      var total=document.createElement('span');
+      total.style.float="center";
+      total.innerText= 0;
+      Total.appendChild(total);
+
+      
+      var box4=document.createElement('div');
+      box4.style.border="2px solid white";
+      box4.style.borderRadius="2px";
+      box4.style.width="250px";
+      box4.style.height="330px";
+      box4.style.margin="10px";
+      box4.style.backgroundColor="rgb(239,239,239)";
+
+      var img4=document.createElement('img');
+      img4.setAttribute("src","https://cdn.shopify.com/s/files/1/0034/7901/1441/products/MG_9713_2_600x.jpg?v=1609840468");
+      img4.style.width="250px";
+      img4.style.height="190px";
+      box4.appendChild(img4);
+
+      var name4=document.createElement('div');
+      name4.innerText="Toner";
+      name4.style.textAlign="center";
+      name4.style.fontFamily="Arial";
+      name4.style.fontSize="20px";
+      box4.appendChild(name4);
+
+      var price4=document.createElement('div');
+      price4.innerText="₹200";
+      price4.price="200";
+      price4.style.textAlign="center";
+      price4.style.fontFamily="Arial";
+      price4.style.padding="10px";
+      price4.style.fontSize="20px";
+      box4.appendChild(price4);
+
+      var btn4=document.createElement('button');
+      btn4.innerText="Add to Cart";
+      btn4.style.fontSize="18px";
+      btn4.style.width="200px";
+      btn4.style.height="40px";
+      btn4.style.align="center";
+      btn4.style.marginTop="15px";
+      btn4.style.marginLeft="20px";
+      btn4.style.backgroundColor="rgb(70, 66, 66)";
+      btn4.style.color="white";
+      btn4.id='btn4';
+      btn4.addEventListener("click", function(){
+           
+           var cartItem4=document.createElement('p');
+           cartItem4.id='cartItem4';
+           cartItem4.innerText=name4.innerText ;
+           cartItem4.style.fontSize="20px";
+           cartItem4.style.fontWeight="bold";
+           document.getElementById('btn4').disabled='true';
+           box3.appendChild(cartItem4);
+   
+           total.innerText= Number(total.innerText) + Number(price4.price);
+           
+           var removeItem4=document.createElement('button');
+           removeItem4.style.float='right';
+           removeItem4.innerText='Remove';
+           removeItem4.style.width="70px";
+           removeItem4.style.height="30px";
+           removeItem4.style.marginRight="10px";
+           removeItem4.addEventListener("click", function(){
+   
+           total.innerText= Number(total.innerText)- Number(price4.price);
+           document.getElementById('btn4').disabled='false';
+   
+               var res=document.getElementById('cartItem4');
+   
+               res.remove();
+   
+            })
+            cartItem4.appendChild(removeItem4);
+         })
+      box4.appendChild(btn4);
+      container.appendChild(box4);
+
+      var box5=document.createElement('div');
+      box5.style.border="2px solid white";
+      box5.style.borderRadius="2px";
+      box5.style.width="250px";
+      box5.style.height="330px";
+      box5.style.margin="10px";
+      box5.style.backgroundColor="rgb(239,239,239)";
+
+      var img5=document.createElement('img');
+      img5.setAttribute("src","https://cdn.shopify.com/s/files/1/0034/7901/1441/products/WhatsAppImage2020-11-07at8.30.16PM_600x.jpg?v=1617806493");
+      img5.style.width="250px";
+      img5.style.height="190px";
+      box5.appendChild(img5);
+
+      var name5=document.createElement('div');
+      name5.innerText="Aloevera Gel";
+      name5.style.textAlign="center";
+      name5.style.fontFamily="Arial";
+      name5.style.fontSize="20px";
+      box5.appendChild(name5);
+
+      var price5=document.createElement('div');
+      price5.innerText="₹200";
+      price5.price="200";
+      price5.style.textAlign="center";
+      price5.style.fontFamily="Arial";
+      price5.style.padding="10px";
+      price5.style.fontSize="20px";
+      box5.appendChild(price5);
+
+      var btn5=document.createElement('button');
+      btn5.innerText="Add to Cart";
+      btn5.style.fontSize="18px";
+      btn5.style.width="200px";
+      btn5.style.height="40px";
+      btn5.style.align="center";
+      btn5.style.marginTop="15px";
+      btn5.style.marginLeft="20px";
+      btn5.style.backgroundColor="rgb(70, 66, 66)";
+      btn5.style.color="white";
+      btn5.id="btn5";
+      btn5.addEventListener("click", function(){
+           
+           var cartItem5=document.createElement('p');
+           cartItem5.id='cartItem5';
+           cartItem5.innerText=name5.innerText;
+           cartItem5.style.fontSize="20px";
+           cartItem5.style.fontWeight="bold";
+           document.getElementById('btn5').disabled='true';
+           box3.appendChild(cartItem5);
+   
+           total.innerText= Number(total.innerText) + Number(price5.price);
+           
+           var removeItem5=document.createElement('button');
+           removeItem5.style.float='right';
+           removeItem5.innerText='Remove';
+           removeItem5.style.width="70px";
+           removeItem5.style.height="30px";
+           removeItem5.style.marginRight="10px";
+           removeItem5.addEventListener("click", function(){
+
+           total.innerText= Number(total.innerText)- Number(price5.price);
+           document.getElementById('btn5').disabled='false'
+           var res=document.getElementById('cartItem5');
+           
+           res.remove();
+   
+            })
+            cartItem5.appendChild(removeItem5);
+         })
+      box5.appendChild(btn5);
+      container.appendChild(box5);
+      document.body.appendChild(container);
+    </script>
+</body>
+</html>
